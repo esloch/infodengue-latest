@@ -1,0 +1,14 @@
+version: 1.0.0
+compose-app: docker-compose
+service-groups:
+  - name: dev
+    project-name: alertadengue  # optional
+    compose-path: containers/compose.yaml
+    env-file: .env
+    services:
+      default: postgres #,wordpress,webserver,certbot
+      list:
+        - name: postgres
+          health-check: true
+
+ 
